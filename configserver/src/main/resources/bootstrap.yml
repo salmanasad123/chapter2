@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+
+
+server:
+  port: 8071
+
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  cloud:
+    config:
+      server:
+        #Local configuration: This locations can either of classpath or locations in the filesystem.
+        native:
+          search-locations: file:////Users/sasad/Documents/chapter2/configserver/src/main/resources/config/
+
+
